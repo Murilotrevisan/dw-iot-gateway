@@ -3,6 +3,8 @@ sdkconfig
 # not ignore default sdkconfig provided by the project for portability
 !sdkconfig.defaults
 
+# VS Code
+.vscode/
 
 # macOS
 .DS_Store
