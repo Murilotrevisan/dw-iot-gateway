@@ -67,9 +67,9 @@ O projeto é desenvolvido em C++ utilizando o framework ESP-IDF v5.x.
 
 O projeto é documentado visualmente via Draw.io para garantir a coerência entre fiação e software.
 
-![Water Circuit](https://github.com/Murilotrevisan/dw-iot-gateway/docs/diagrams/water-circuit.png)
+![Water Circuit](https://github.com/Murilotrevisan/dw-iot-gateway/blob/main/docs/diagrams/water-circuit.png)
 
-![Command Circuit](https://github.com/Murilotrevisan/dw-iot-gateway/docs/diagrams/command-circuit.png)
+![Command Circuit](https://github.com/Murilotrevisan/dw-iot-gateway/blob/main/docs/diagrams/command-circuit.png)
 
 ## Configuração e Build
 
