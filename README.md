@@ -26,13 +26,15 @@ O projeto dw-iot-gateway é um "Sidecar" (caixa externa) que moderniza uma máqu
 
 ### Motivação
 
-Atuando como líder de software embarcado e tendo maior experiência no desenvolvimento de STM32 em sistemas crítico; Este projeto foi desenvolvido como um laboratório de engenharia para "desenferrujar" habilidades de software embarcado em baixo nível e aprender habilidades de softwares embarcado focados em conectividade e domótica, que são áreas pessoais de interesse, focando em:
+Atuando como líder de software embarcado e tendo maior experiência no desenvolvimento de STM32 em sistemas críticos; Este projeto foi desenvolvido como um laboratório de engenharia para "desenferrujar" habilidades de software embarcado em baixo nível e aprender habilidades focados em conectividade e domótica, que são áreas pessoais de interesse, focando em:
 
 - Clean Architecture e camadas de abstração (HAL).
 - ESP-IDF Framework.
 - Comunicação IOT de dispositivos inteligentes.
 
 Além disso, esse projeto resolve uma dificuldade que é operar a máquina de lavar louças manual, automatizando alguns processos mais simples que exigem menor intervenção no sistema, e simplificando a vida do operador.
+
+> Como experimentação das novas tecnologias desenvolvidas no final de 2025, esse projeto funcionará como um playground para um desenvolvimento baseado em SDD (Specification Driven Development), onde eu, com a minha experiência em regras de negócio e arquiteturas de software embarcado irei descrever nas issues do projeto o que deve ser desenvolvido, e avaliar se agentes de IA conseguem desenvolver os códigos a partir disso, atuando somente como revisor ou desenvolvedor das camadas mais próximas de Hardware (Limitação conhecida dos agentes de IA atualmente [1Q 2026]). Caso os agentes não deem conta do desenvolvimento, irei assumir o desenvolvimento, como forma de rastreio, deixarei os commits de códigos escritos com IA com uma cabeçalho do nome do agente de IA, permitindo um blame de quais seções foram escritas por IA e quais a ferramenta não foi capaz de desenvolver e necessitou de suporte humano.
 
 ## Arquitetura de Segurança
 
