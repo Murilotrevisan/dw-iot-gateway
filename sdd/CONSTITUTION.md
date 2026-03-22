@@ -17,7 +17,7 @@ It exists to ensure that:
 - implementation follows approved specifications
 - architecture remains intentional and maintainable
 - traceability is preserved
-- validation is planned before implementation
+- verification and validation are planned before implementation
 - coding agents operate only within explicit and approved boundaries
 
 This constitution is the highest-level repository governance document for implementation-facing work inside the SDD corpus.
@@ -77,7 +77,7 @@ The project follows these rules:
 3. ambiguity must be resolved in specifications, not silently in code
 4. milestone packets may narrow context, but they must not silently override approved higher-level specifications
 
-If a required behavior is missing from the specification set, the correct action is to stop implementation and warn to refine the specification.
+If a required behavior is missing from the specification set, implementation must stop and specification refinement must be requested from the project manager before execution continues.
 
 ---
 
@@ -134,6 +134,7 @@ The architecture must support replacement of:
 - remote interface adapters
 - low-level hardware drivers
 - diagnostics adapters
+
 without redesign of the core logic, unless an approved decision explicitly states otherwise.
 
 ---
@@ -182,7 +183,15 @@ The project must distinguish:
 
 Tests are required, but tests alone are not sufficient without traceability to requirements or acceptance criteria.
 
-For verification and validation, agent need to write a .md to be paste on issue, with all definitions above (what will be verified, how it will be verified, ...), for another agent execute again the tests and validate the coverage and quality of tests.
+When agent execution is enabled, the execution package must include a Markdown verification and validation handoff artifact suitable for review and possible re-execution by another agent or reviewer.
+
+At minimum, this handoff artifact must identify:
+- what was verified
+- how it was verified
+- what was validated
+- how validation evidence was collected
+- what test scope was covered
+- known limitations, exclusions, or open risks in the test set
 
 ---
 
@@ -210,7 +219,7 @@ When agent execution is enabled, agents must:
 - stay strictly within assigned issue scope
 - avoid inventing behavior
 - provide evidence required by the issue and review process
-- provide documentation on .md text for another agent evaluate scope, quality and assurance/coverage on tests.
+- provide a Markdown handoff artifact suitable for another agent or reviewer to evaluate implementation scope, verification quality, and assurance coverage
 
 Agent-generated output must be rejected if it:
 - introduces unstated behavior
@@ -241,13 +250,13 @@ Reviews must evaluate:
 
 Draft artifacts may guide discussion, but only approved artifacts authorize execution.
 
-For review, agent need to write a text on .md format to project manager evaluate the cumpliment of itens above (compliance with governing artifacts, etc...).
+When agent execution is enabled, the review package must include a Markdown review handoff artifact that allows the project manager or another reviewer to evaluate compliance with the review criteria above.
 
 ---
 
 ## 14. Change Control Rule
 
-If a change need to update any of the following SDD artifacts:
+If a change affects any of the following SDD artifacts or concerns:
 - behavior
 - interfaces
 - requirements
@@ -257,9 +266,19 @@ If a change need to update any of the following SDD artifacts:
 - acceptance criteria
 - issue execution rules
 
-Changes must not be applied in code when they modify approved project intent. They need to warn project manager to review sdd corpus.
+the corresponding SDD artifacts must be updated and submitted for review before the change is treated as approved project intent.
 
-When a change is architectural or policy-level, it must be recorded through the approved decision mechanism. this has to update files and include on .md file to documentation and review for project manager/agent reviewer.
+Changes must not be applied only in code when they modify approved project intent. Such changes must be surfaced explicitly to the project manager for SDD-corpus review.
+
+When a change is architectural or policy-level, it must be recorded through the approved decision mechanism.
+
+When agent execution is enabled, any change that affects SDD artifacts must include a Markdown change-impact handoff artifact for project manager or reviewer evaluation.
+
+At minimum, this handoff artifact must identify:
+- what changed
+- why the change was needed
+- which SDD artifacts were updated
+- which dependent artifacts may require future review
 
 ---
 
@@ -283,7 +302,9 @@ When practical, SDD documents should carry one of these statuses:
 - `Approved`
 - `Superseded`
 
-Only approved artifacts are authoritative for implementation. If an implementation need an not approved artifacts, they need to stop and warn project manager.
+Only approved artifacts are authoritative for implementation.
+
+If implementation depends on a non-approved artifact, execution must stop and the project manager must be notified before work continues.
 
 ---
 
@@ -296,7 +317,7 @@ Any amendment must:
 - explain why the change is needed
 - preserve consistency with the rest of the SDD corpus
 - trigger updates to dependent artifacts where necessary
-- lists all parts that used the old artifacts changed that need to be reviewed in future
+- identify the dependent artifacts, issues, or reviews that may require future reassessment because they relied on the previous version
 
 ---
 
